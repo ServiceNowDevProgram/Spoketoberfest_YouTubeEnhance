@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_brad_youtube_enh.YTUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>YTUtil</name>
+        <script><![CDATA[var YTUtil = Class.create();
+YTUtil.prototype = {
+	initialize: function() {
+	},
+
+	getIdFromUrl : function(url) {
+
+		var patternList = [
+			/v=([A-Za-z_0-9-]+)/,
+			/([A-Za-z_0-9-]+)$/
+		];
+
+		for (var i = 0; i < patternList.length; i++) {
+			var match = url.match(patternList[i]);
+
+			if (match) {
+				return match[1];
+			}
+		}
+
+		return;
+	},
+
+	// Convert ISO 3339 format to GlideDateTime object
+
+	zToGlideDateTime : function(gTimeStr) {
+
+		var part = gTimeStr.split('T');
+		var dateStr = part[0];
+		var timeStr = part[1].split('.')[0];
+		var gdt = new GlideDateTime();
+
+		gdt.setValue(dateStr + ' ' + timeStr);
+
+		return gdt;
+
+	},
+
+	// Convert GlideDateTime to ISO 3339 format
+
+	GlideDateTimeToZ : function(gdt) {
+
+		var str = gdt.getDate() + 'T' + gdt.getTime().getByFormat('HH:mm:ss') + '.00Z';
+
+		return str;
+
+	},
+
+	// Examples PT30S, PT4M42S, PT1H, PT6H41M55S
+
+	ptToSeconds : function(duration) {
+
+		var a = duration.match(/\d+/g);
+
+		if (duration.indexOf('M') >= 0 && duration.indexOf('H') == -1 && duration.indexOf('S') == -1) {
+			a = [0, a[0], 0];
+		}
+
+		if (duration.indexOf('H') >= 0 && duration.indexOf('M') == -1) {
+			a = [a[0], 0, a[1]];
+		}
+		if (duration.indexOf('H') >= 0 && duration.indexOf('M') == -1 && duration.indexOf('S') == -1) {
+			a = [a[0], 0, 0];
+		}
+
+		duration = 0;
+
+		if (a.length == 3) {
+			duration = duration + parseInt(a[0]) * 3600;
+			duration = duration + parseInt(a[1]) * 60;
+			duration = duration + parseInt(a[2]);
+		}
+
+		if (a.length == 2) {
+			duration = duration + parseInt(a[0]) * 60;
+			duration = duration + parseInt(a[1]);
+		}
+
+		if (a.length == 1) {
+			duration = duration + parseInt(a[0]);
+		}
+
+		return duration;
+
+	},
+
+	getIdListFromHTML : function(html) {
+
+		var lines = html.split('\n');
+		var list = [];
+		// gs.info('>>>getIdListFromHTML(): lines.length=' + lines.length);
+
+		for (var i = 0; i < lines.length; i++) {
+			var line = lines[i];
+			if (line.indexOf('v%3D')) {
+				// gs.info('>>>KCV: ' + i + ':' + line);
+				var pos = line.indexOf('v%3D');
+				var str = line.substring(pos, line.length - 1);
+				var patt = /v%3D([A-Za-z_0-9-]+)%26.*/;
+				var match = str.match(patt);
+				if (match) {
+					// gs.info('>>>getIdListFromHTML(): ' + i + ':' + match[1]);
+					list.push(match[1]);
+				}
+			}
+		}
+
+		list = new global.ArrayUtil().unique(list);
+
+		return list;
+
+	},
+
+	// Takes a entry from the YouTube video items[] array
+	// Turns it in to an simpler object used in actions
+	makeObject : function(item) {
+
+		if (!item) {
+			return ;
+		}
+
+		var obj = {
+			"id" : item.id,
+			"title" : item.snippet.title,
+			"duration" : "",
+			"allowed" : "",
+			"blocked" : "",
+			"channel" : {
+				"id" : item.snippet.channelId,
+				"title" : item.snippet.channelTitle
+			}
+		};
+
+		if (item.hasOwnProperty("contentDetails")) {
+			if (item.contentDetails.hasOwnProperty("duration")) {
+				obj.duration = item.contentDetails.duration;
+			}
+			if (item.contentDetails.hasOwnProperty("regionRestriction")) {
+				if (item.contentDetails.regionRestriction.hasOwnProperty("blocked")) {
+					obj.blocked = item.contentDetails.regionRestriction.blocked.join(',');
+				}
+				if (item.contentDetails.regionRestriction.hasOwnProperty("allowed")) {
+					obj.allowed = item.contentDetails.regionRestriction.allowed.join(',');
+				}
+			}
+		}
+
+		if (item.hasOwnProperty('statistics')) {
+			item.stats = {
+				"likes" : item.statistics.likeCount,
+				"dislikes" : item.statistics.dislikeCount,
+				"views" :  item.statistics.viewCount,
+			};
+		}
+
+		// gs.info('makeObject(): ' + JSON.stringify(obj, null, 4));
+
+		return obj;
+
+	},
+
+	type: 'YTUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>chuck.tomasi</sys_created_by>
+        <sys_created_on>2020-10-14 16:46:18</sys_created_on>
+        <sys_id>80c781ee2ff754500b0c58a72799b655</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>YTUtil</sys_name>
+        <sys_package display_value="YouTube Enhancements Spoke" source="x_brad_youtube_enh">5e81e42a1bb71490d262b8c11a4bcb98</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="YouTube Enhancements Spoke">5e81e42a1bb71490d262b8c11a4bcb98</sys_scope>
+        <sys_update_name>sys_script_include_80c781ee2ff754500b0c58a72799b655</sys_update_name>
+        <sys_updated_by>chuck.tomasi</sys_updated_by>
+        <sys_updated_on>2020-10-14 22:53:55</sys_updated_on>
+    </sys_script_include>
+</record_update>

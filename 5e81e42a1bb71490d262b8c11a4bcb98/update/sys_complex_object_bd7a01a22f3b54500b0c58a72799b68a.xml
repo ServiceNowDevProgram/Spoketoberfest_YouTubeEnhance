@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_complex_object">
+    <sys_complex_object action="INSERT_OR_UPDATE">
+        <label/>
+        <name>FDf97a01a2d03b545083d995f47be73d8a</name>
+        <namespace>FlowDesigner</namespace>
+        <scope_name>5e81e42a1bb71490d262b8c11a4bcb98</scope_name>
+        <serialized_content>{"FlowDesigner:FDf97a01a2d03b545083d995f47be73d8a":{"blocked":"String","blocked.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Blocked\",\"mandatory\":\"true\",\"order\":\"5\",\"max_length\":\"0\"}"},"stats":{"dislikes":"Integer","dislikes.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Dislikes\",\"mandatory\":\"true\",\"order\":\"12\",\"max_length\":\"0\"}"},"view_count":"Integer","view_count.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"View count\",\"mandatory\":\"true\",\"order\":\"10\",\"max_length\":\"0\"}"},"likes":"Integer","likes.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Integer\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"integer\",\"default_value\":\"\",\"label\":\"Likes\",\"mandatory\":\"true\",\"order\":\"11\",\"max_length\":\"0\"}"}},"stats.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"default_value\":\"\",\"label\":\"Stats\",\"mandatory\":\"true\",\"order\":\"9\",\"max_length\":\"0\"}"},"allowed":"String","allowed.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Allowed\",\"mandatory\":\"true\",\"order\":\"4\",\"max_length\":\"0\"}"},"channel":{"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"ID\",\"mandatory\":\"true\",\"order\":\"7\",\"max_length\":\"0\"}"},"title":"String","title.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Title\",\"mandatory\":\"true\",\"order\":\"8\",\"max_length\":\"0\"}"}},"channel.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"Object\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"object\",\"default_value\":\"\",\"label\":\"Channel\",\"mandatory\":\"true\",\"order\":\"6\",\"max_length\":\"0\"}"},"description":"String","description.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Description\",\"mandatory\":\"true\",\"order\":\"3\",\"max_length\":\"0\"}"},"id":"String","id.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"ID\",\"mandatory\":\"true\",\"order\":\"1\",\"max_length\":\"0\"}"},"title":"String","title.$field_facets":{"SimpleMapFacet":"{\"uiTypeLabel\":\"String\",\"read_only\":\"false\",\"hint\":\"\",\"uiType\":\"string\",\"default_value\":\"\",\"label\":\"Title\",\"mandatory\":\"true\",\"order\":\"2\",\"max_length\":\"0\"}"}},"FlowDesigner:FDf97a01a2d03b545083d995f47be73d8a.$type_facets":{"SimpleMapFacet":"{\"sourceId\":\"\",\"default_value\":\"\",\"label\":\"Video\",\"mandatory\":\"true\",\"uiUniqueId\":\"fa613df7-52d1-4234-a902-9808f07882bb\",\"uiTypeLabel\":\"Object\",\"co_type_name\":\"FDf97a01a2d03b545083d995f47be73d8a\",\"element_mapping_provider\":\"com.glide.flow_design.action.data.FlowDesignVariableMapper\",\"read_only\":\"false\",\"sourceUiUniqueId\":\"\",\"sourceType\":\"\",\"hint\":null,\"uiType\":\"object\",\"order\":\"1\",\"max_length\":\"65000\"}"}}</serialized_content>
+        <sys_class_name>sys_complex_object</sys_class_name>
+        <sys_created_by>chuck.tomasi</sys_created_by>
+        <sys_created_on>2020-10-14 16:55:13</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>bd7a01a22f3b54500b0c58a72799b68a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FDf97a01a2d03b545083d995f47be73d8a</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="YouTube Enhancements Spoke" source="x_brad_youtube_enh">5e81e42a1bb71490d262b8c11a4bcb98</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="YouTube Enhancements Spoke">5e81e42a1bb71490d262b8c11a4bcb98</sys_scope>
+        <sys_update_name>sys_complex_object_bd7a01a22f3b54500b0c58a72799b68a</sys_update_name>
+        <sys_updated_by>chuck.tomasi</sys_updated_by>
+        <sys_updated_on>2020-10-14 16:55:13</sys_updated_on>
+        <type>complex_object_schema</type>
+    </sys_complex_object>
+</record_update>
